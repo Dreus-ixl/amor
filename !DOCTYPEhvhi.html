@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Cumpleaños mi niña linda ❤️</title>
+
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: Georgia, 'Times New Roman', serif;
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    .tarjeta {
+      background: white;
+      width: 85%;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      animation: aparecer 2s ease;
+    }
+
+    img {
+      width: 70%;
+      max-width: 300px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    button {
+      padding: 12px 25px;
+      background: #ff4d88;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    #mensaje {
+      margin-top: 25px;
+      font-size: 18px;
+      color: #b30059;
+      min-height: 40px;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <button onclick="document.getElementById('cancion').play()"
+style="
+  padding:10px 20px;
+  background:#cc3366;
+  color:white;
+  border:none;
+  border-radius:12px;
+  font-size:15px;
+  margin-bottom:20px;
+">
+🎵 Escuchá la canción
+</button>
+
+<audio id="cancion" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+  <div class="tarjeta">
+    <h1 style="color:#cc3366;">
+      Feliz cumpleaños mi niña linda ❤️
+    </h1>
+
+    <p style="font-size:18px; color:#444;">
+      Tu primer cumpleaños junto a ti... no puedo dejar de pensar en todo lo que pasamos. Hubo momentos dificiles, pero cada tropiezo nos hizo elegirnos una y otra vez. Esta cancion no es nuestra, pero dice todo lo que aveces no puedo decir, que cada dia a tu lado es un regalo... y que quiero seguir regalandote mi tiempo, mis alegrias y mi amor hasta morir.
+    </p>
+
+    <img src="foto.jpeg" alt="Nosotros">
+
+    <button onclick="mostrarMensaje()">
+      Tocá acá preciosa 💌
+    </button>
+
+    <p id="mensaje"></p>
+  </div>
+
+  <script>
+    let mensajes = [
+      "Eres mi lugar seguro 💖",
+      "Desde que llegaste tu, mi vida se lleno de color ✨",
+      "te mereces todo lo bonito en esta vida ❤️",
+      "Gracias por existir mi Manzanita de alasitas 💕"
+    ];
+
+    let indice = 0;
+
+    function mostrarMensaje() {
+      document.getElementById("mensaje").innerHTML = mensajes[indice];
+      indice = (indice + 1) % mensajes.length;
+    }
+  </script>
+
+</body>
+</html>
